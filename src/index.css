@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Lateef:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Crushed&family=DM+Serif+Display:ital@0;1&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.heart-effect-text {
+    cursor: pointer
+}
+
+.tiny-heart {
+    z-index: 30;
+    position: absolute;
+    opacity: 0;
+    background-color: #ED6C5D;
+    box-shadow: 0px 0px 50px 4px transparentize(#ED6C5D, .3);
+    animation: animated-heart infinite ease-in;
+    /*&:before, &:after {*/
+    /*    content: '';*/
+    /*    position: absolute;*/
+    /*    border-radius: 50%;*/
+    /*    top: 0;*/
+    /*    left: 0;*/
+    /*    width: 100%;*/
+    /*    height: 100%;*/
+    /*    background-color: #ED6C5D;*/
+    /*}*/
+    /*&:before {*/
+    /*    transform: translateX(-50%);*/
+    /*}*/
+    /*&:after {*/
+    /*    transform: translateY(-50%)*/
+    /*}*/
+}
+
+.tiny-heart:before, .tiny-heart:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ED6C5D;
+}
+
+.tiny-heart:before {
+    transform: translateX(-50%);
+}
+
+.tiny-heart:after {
+    transform: translateY(-50%)
+}
+
+@keyframes animated-heart {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(45deg)
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, -40%) rotate(45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(0, -1000%) rotate(45deg);
+    }
+}
+
+
